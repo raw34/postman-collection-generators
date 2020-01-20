@@ -26,6 +26,7 @@
     "api-spec-converter": "^2.11.0",
     "csv-parse": "^4.8.5",
     "fs": "^0.0.1-security",
+    "mem": "^6.0.1",
     "moment": "^2.24.0",
     "openapi-to-postmanv2": "^1.1.6",
     "path": "^0.12.7",
