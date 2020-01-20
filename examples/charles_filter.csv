@@ -1,0 +1,6 @@
+host,group,name,method
+api.bilibili.com,,/x/article/sentinel/config,GET
+api.bilibili.com,,/x/laser/app/query,GET
+api.bilibili.com,,/x/article/categories,GET
+api.bilibili.com,,/x/v2/reply/v2/emojis,GET
+api.bilibili.com,,/x/push/report,POST

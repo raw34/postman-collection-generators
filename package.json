@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Generate postman collection from files, like postman, openapi, swagger, charles ...",
   "main": "index.js",
+  "bin": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,8 +29,7 @@
     "fs": "^0.0.1-security",
     "mem": "^6.0.1",
     "moment": "^2.24.0",
-    "openapi-to-postmanv2": "^1.1.6",
-    "path": "^0.12.7",
+    "openapi-to-postmanv2": "^0.2.1-memoryfix.2",
     "postman-collection": "^3.5.5",
     "querystring": "^0.2.0",
     "uuid": "^3.4.0",

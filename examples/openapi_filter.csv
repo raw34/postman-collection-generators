@@ -1,0 +1,5 @@
+host,group,name,method
+petstore.swagger.io,pets,/pets,GET
+petstore.swagger.io,pets,/pets/{id},GET
+petstore.swagger.io,pets,/pets/{id},PUT
+petstore.swagger.io,pets,/pets/{id},DELETE

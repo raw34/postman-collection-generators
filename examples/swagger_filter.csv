@@ -1,0 +1,6 @@
+host,group,name,method
+petstore.swagger.io,pet,/pet,GET
+petstore.swagger.io,pet,/pet/findByStatus,GET
+petstore.swagger.io,pet,/pet/{petId},GET
+petstore.swagger.io,pet,/pet/{petId}/uploadImage,POST
+petstore.swagger.io,store,/store/order,POST
