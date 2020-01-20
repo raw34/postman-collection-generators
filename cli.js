@@ -2,7 +2,7 @@ const argv = require('yargs').argv;
 const generator = require('./index');
 
 if (!argv['source']) {
-  throw new Error('Source option required!');
+  throw new Error('Option source is required!');
 }
 
 var source = argv['source'];
