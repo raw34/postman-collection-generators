@@ -1,0 +1,38 @@
+{
+  "name": "postman-collection-generator",
+  "version": "0.1.0",
+  "description": "Generate postman collection from files, like postman, openapi, swagger, charles ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raw34/postman-collection-generator.git"
+  },
+  "keywords": [
+    "postman",
+    "openapi",
+    "swagger",
+    "charles"
+  ],
+  "author": "raw34",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raw34/postman-collection-generator/issues"
+  },
+  "homepage": "https://github.com/raw34/postman-collection-generator#readme",
+  "dependencies": {
+    "api-spec-converter": "^2.11.0",
+    "csv-parse": "^4.8.5",
+    "fs": "^0.0.1-security",
+    "moment": "^2.24.0",
+    "openapi-to-postmanv2": "^1.1.6",
+    "path": "^0.12.7",
+    "postman-collection": "^3.5.5",
+    "querystring": "^0.2.0",
+    "uuid": "^3.4.0",
+    "yaml": "^1.7.2",
+    "yargs": "^15.1.0"
+  }
+}

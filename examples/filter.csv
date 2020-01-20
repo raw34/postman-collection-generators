@@ -1,0 +1,7 @@
+host,group,name
+postman-echo.com,Request Methods,GET Request
+postman-echo.com,Request Methods,POST Raw Text
+postman-echo.com,Request Methods,POST Form Data
+postman-echo.com,Request Methods,PUT Request
+postman-echo.com,Request Methods,PATCH Request
+postman-echo.com,Request Methods,DELETE Request
