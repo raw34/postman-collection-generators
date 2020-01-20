@@ -1,1 +1,1 @@
-# postman-collection-generator
+# postman-collection-generators
