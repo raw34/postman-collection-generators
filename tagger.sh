@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 作用，生成从上个tag到现在的changelog，并自动打新tag
-# 前提，已有Changelog.md
+# 前提，已有CHANGELOG.md
 
 # 获取参数
 message=""
@@ -29,10 +29,10 @@ fi
 git checkout master && git pull origin master &&
 
 # 生成changelog
-git changelog -n -t $version && cat Changelog.md &&
+git changelog -n -t $version && cat CHANGELOG.md &&
 
 # 提交改动
-git add Changelog.md &&
+git add CHANGELOG.md &&
 git commit -m "docs: update changelog" &&
 
 # 打tag
