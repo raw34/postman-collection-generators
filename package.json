@@ -33,7 +33,6 @@
     "postman-collection": "^3.5.5",
     "querystring": "^0.2.0",
     "uuid": "^3.4.0",
-    "yaml": "^1.7.2",
     "yargs": "^15.1.0"
   }
 }
