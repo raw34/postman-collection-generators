@@ -10,21 +10,27 @@ const converterCharles = require('./lib/charles');
 module.exports = {
   generate: function(input, options = {filter: null, headers: null, output: null}, cb = null) {
     var input = typeof input === 'string' && fs.statSync(input).isFile() ? JSON.parse(fs.readFileSync(input)) : JSON.parse(input);
-    var filter = typeof options['filter'] === 'string' && fs.statSync(options['filter']).isFile() ? csvParse(fs.readFileSync(options['filter'])) : csvParse(options['filter']);
-    var headers = typeof headers === 'string' && fs.statSync(options['headers']).isFile() ? JSON.parse(fs.readFileSync(options['filter'])) : JSON.parse(options['headers']); 
+
+    if (options.filter) {
+      options.filter = typeof options['filter'] === 'string' && fs.statSync(options['filter']).isFile() ? csvParse(fs.readFileSync(options['filter'])) : csvParse(options['filter']);
+    }
+    
+    if (options.headers) {
+      options.headers = typeof options['headers'] === 'string' && fs.statSync(options['headers']).isFile() ? JSON.parse(fs.readFileSync(options['filter'])) : JSON.parse(options['headers']); 
+    }
 
     var type = this.identifyInputType(input);
     var output = 'output' in options && options['output'] ? options['output'] : './' + type + '_' + moment().format('YYYYMMDDHHmmss') + '.json';
 
     if (type == 'openapi') {
-      converterOpenapi.generate(input, output, filter, headers);
+      converterOpenapi.generate(input, output, options.filter, options.headers);
     } else if (type == 'swagger') {
-      converterSwagger.generate(input, output, filter, headers);
+      converterSwagger.generate(input, output, options.filter, options.headers);
     } else if (type == 'charles') {
-      converterCharles.generate(input, output, filter, headers);
+      converterCharles.generate(input, output, options.filter, options.headers);
     } else if (type == 'postman') {
       input = new postman.Collection(input);
-      converterPostman.generate(input, output, filter, headers);
+      converterPostman.generate(input, output, options.filter, options.headers);
     } else {
       throw new Error('Unknown source type!');
     }
