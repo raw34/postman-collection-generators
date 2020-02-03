@@ -23,11 +23,19 @@ module.exports = {
     var output = 'output' in options && options['output'] ? options['output'] : './' + type + '_' + moment().format('YYYYMMDDHHmmss') + '.json';
 
     if (type == 'openapi') {
-      converterOpenapi.generate(input, output, options.filter, options.headers);
+      converterOpenapi.convert(input).then(function(result) {
+        input = new postman.Collection(result);
+        converterPostman.generate(input, output, options.filter, options.headers);
+      });
     } else if (type == 'swagger') {
-      converterSwagger.generate(input, output, options.filter, options.headers);
+      converterSwagger.convert(input).then(function(result) {
+        input = new postman.Collection(result);
+        converterPostman.generate(input, output, options.filter, options.headers);
+      });
     } else if (type == 'charles') {
-      converterCharles.generate(input, output, options.filter, options.headers);
+      input = converterCharles.convert(input, output);
+      input = new postman.Collection(input);
+      converterPostman.generate(input, output, options.filter, options.headers);
     } else if (type == 'postman') {
       input = new postman.Collection(input);
       converterPostman.generate(input, output, options.filter, options.headers);
