@@ -1,6 +1,5 @@
 host,group,name,method
-petstore.swagger.io,pet,/pet,GET
-petstore.swagger.io,pet,/pet/findByStatus,GET
-petstore.swagger.io,pet,/pet/{petId},GET
-petstore.swagger.io,pet,/pet/{petId}/uploadImage,POST
-petstore.swagger.io,store,/store/order,POST
+petstore.swagger.io,pet,Finds Pets by status,GET
+petstore.swagger.io,pet,Find pet by ID,GET
+petstore.swagger.io,pet,Updates a pet in the store with form data,POST
+petstore.swagger.io,store,Place an order for a pet,POST
