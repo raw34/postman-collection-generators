@@ -1,6 +1,5 @@
 const fs = require('fs');
 const moment = require('moment');
-const postman = require('postman-collection');
 const csvParse = require('csv-parse/lib/sync');
 const converterPostman = require('./lib/postman');
 const converterOpenapi = require('./lib/openapi');
@@ -20,25 +19,22 @@ module.exports = {
     }
 
     var type = this.identifyInputType(input);
-    var output = 'output' in options && options['output'] ? options['output'] : './' + type + '_' + moment().format('YYYYMMDDHHmmss') + '.json';
+
+    options.output = 'output' in options && options['output'] ? options['output'] : './' + type + '_' + moment().format('YYYYMMDDHHmmss') + '.json';
 
     if (type == 'openapi') {
       converterOpenapi.convert(input).then(function(result) {
-        input = new postman.Collection(result);
-        converterPostman.generate(input, output, options.filter, options.headers);
+        converterPostman.generate(result, options, cb);
       });
     } else if (type == 'swagger') {
       converterSwagger.convert(input).then(function(result) {
-        input = new postman.Collection(result);
-        converterPostman.generate(input, output, options.filter, options.headers);
+        converterPostman.generate(result, options, cb);
       });
     } else if (type == 'charles') {
-      input = converterCharles.convert(input, output);
-      input = new postman.Collection(input);
-      converterPostman.generate(input, output, options.filter, options.headers);
+      input = converterCharles.convert(input, options.output);
+      converterPostman.generate(input, options, cb);
     } else if (type == 'postman') {
-      input = new postman.Collection(input);
-      converterPostman.generate(input, output, options.filter, options.headers);
+      converterPostman.generate(input, options, cb);
     } else {
       throw new Error('Unknown source type!');
     }
