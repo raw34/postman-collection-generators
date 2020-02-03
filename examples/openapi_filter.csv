@@ -1,5 +1,6 @@
 host,group,name,method
-petstore.swagger.io,pets,/pets,GET
-petstore.swagger.io,pets,/pets/{id},GET
-petstore.swagger.io,pets,/pets/{id},PUT
-petstore.swagger.io,pets,/pets/{id},DELETE
+petstore.swagger.io,pets,find Pets,GET
+petstore.swagger.io,pets,find pet by id,GET
+petstore.swagger.io,pets,test Req,PUT
+petstore.swagger.io,pets,delete Pet,DELETE
+petstore.swagger.io,pets,deletea fd Pet,DELETE
