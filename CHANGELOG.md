@@ -1,4 +1,10 @@
 
+v1.0.4 / 2020-02-03
+===================
+
+  * fix: debug for openapi and swagger filter
+  * fix: filter file not found bugfix
+
 v1.0.3 / 2020-01-21
 ===================
 
