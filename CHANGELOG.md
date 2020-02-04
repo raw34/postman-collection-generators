@@ -1,4 +1,10 @@
 
+v1.0.6 / 2020-02-04
+===================
+
+  * feat: support callback for generator
+  * feat: support async and await
+
 v1.0.5 / 2020-02-03
 ===================
 
